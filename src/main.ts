@@ -1,21 +1,11 @@
-import express from "express"
+// import * as www from "./www"
+import {app,hello} from "./www"
+import People from "./class"
 
-
-const app = express()
-
-const body ={
-    id : 12,
-    user : "seokki"
-}
-
-
+const p1 = new People()
 app.get("/",(req,res)=>{
-    res.send(body)
-    console.log(req.headers)
+    res.send("hello")
+    hello()
 })
 
-app.listen(3000,()=>{
-    console.log("hello wolrd")
-})
-
-
+app.listen(3000)
